@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {background-color:yellow}
+        form {background-color:grey}
+        h1   {background-color:grey}
+    </style>
+</head>
+<body>
+<h1>CREATE BLOG</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="SUBMIT">
+</form>
+
+</body>
+</html>

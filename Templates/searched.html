@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {background-color:yellow}
+        form {background-color:grey}
+        h2   {background-color:grey}
+    </style>
+</head>
+<body>
+ {% if Postitems %}
+    {% for Postitem in Postitems %}
+       <br>{{Postitem.title}}<br>
+       {{Postitem.content}}<br>
+        <img src="{{Postitem.postimage.url}}"><br>
+        {{Postitem.caption}}
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

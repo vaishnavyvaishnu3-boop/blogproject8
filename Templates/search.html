@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {background-color:yellow}
+        form {background-color:grey}
+        h2   {background-color:grey}
+    </style>
+</head>
+<body>
+<h1>SEARCH BLOG TITLE</h1>
+<form action="{% url 'searchd' %}" method="get">
+    <input type="text" name='q' placeholder="search" title="search blog titles">
+    <button type="submit" title="search"></button>
+</form>
+
+</body>
+</html>

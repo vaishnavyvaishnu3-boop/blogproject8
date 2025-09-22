@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        body {background-color:yellow}
+        table {background-color:grey}
+        h1   {background-color:grey}
+    </style>
+</head>
+<body>
+<h1>WELCOME BLOGGERS</h1>
+<table>
+<tr>
+            <td><a href="{% url 'profile'%}">CREATE PROFILE TO BLOG</a></td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'createblog' %}">CREATE BLOG</a></td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'see' %}">VIEW BLOG</a></td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'profileslist' %}">VIEW PROFILES</a></td>
+        <tr>
+            <td><a href="{% url 'galleries' %}">VIEW PROFILE PICTURES</a></td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'searches' %}">SEARCH TITLES RELATED TO BLOG</a></td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'commenting' %}">ADD COMMENT</a></td>
+        </tr>
+        <tr>
+            <td><a href="{% url 'commenter' %}">VIEW COMMENTS</a><br></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {background-color:yellow}
+        form {background-color:grey}
+        h1  {background-color:grey}
+    </style>
+</head>
+<body>
+<h1>PHOTO</h1>
+{% for Profilepicture in Profilepictures %}
+<br>{{Profilepicture.username}}<br>
+<img src="{{Profilepicture.profile_pic.url}}">
+{% endfor %}
+
+</body>
+</html>

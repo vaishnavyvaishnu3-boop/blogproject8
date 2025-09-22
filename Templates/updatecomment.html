@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {background-color:yellow}
+        form {background-color:grey}
+        h1   {background-color:grey}
+    </style>
+</head>
+<body>
+<h1>UPDATE YOUR COMMENT</h1>
+ <form action="" method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><label>Enter Your Name:</label></td>
+            <td><input type="text" name="name" placeholder="Enter Your Name"></td>
+            <td><label>Enter your Email:</label></td>
+            <td><input type="text" name="email" placeholder="Enter Your email"></td>
+            <td><label>Enter Your Comment:</label></td>
+            <td><textarea  name="content"></textarea>
+            <td><input type="submit" value="UPDATE"></td>
+        </tr>
+    </table>
+ </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {background-color:yellow}
+        form {background-color:grey}
+        h2   {background-color:grey}
+    </style>
+</head>
+<body>
+<h2>UPLOAD A PHOTO</h2>
+<form action=""  method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" value="UPLOAD">
+
+</form>
+
+</body>
+</html>

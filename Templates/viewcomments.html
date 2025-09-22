@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {background-color:yellow}
+        form {background-color:grey}
+        h2   {background-color:grey}
+    </style>
+</head>
+<body>
+{% for Commentdata in Commentdatas %}
+{{Commentdata.name}}
+{{Commentdata.email}}
+{{Commentdata.content}}<br>
+<a href="{% url 'eachcomments' Commentdata.id %}">VIEW YOUR COMMENT</a><br>
+<a href="{% url 'updatedcomment' Commentdata.id %}">UPDATE YOUR COMMENT</a><br>
+<a href="{% url 'deletedcomment' Commentdata.id %}">DELETE YOUR COMMENT</a><br><hr>
+{% endfor %}
+
+</body>
+</html>
