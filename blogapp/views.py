@@ -45,7 +45,7 @@ def login(request):
         user=auth.authenticate(request, username=username,password=password)
         if user is not None:
             auth.login(request,user)
-            return redirect('entries')
+            return redirect('seconds')
         else:
             messages.error(request,'Invalid username or password')
             return redirect('logged')
@@ -133,7 +133,7 @@ def profile_image(request):
             form.save()
         else:
             form=ProfileForm()
-        return redirect('entries')
+        return redirect('seconds')
     return render(request, 'profileimages.html',{'form':form})
 
 def home_image(request):
@@ -149,14 +149,14 @@ def post_blog(request):
             form.save()
         else:
             form=PostForm()
-        return redirect('entries')
+        return redirect('seconds')
 
     return render(request,'post.html',{'form':form})
 
 def see_blog(request):
     Postitems=postitem.objects.all()
 
-    paginator=Paginator(Postitems,1)
+    paginator=Paginator(Postitems,3)
     page_number=request.GET.get('page')
     try:
         page=paginator.get_page(page_number)
@@ -206,7 +206,7 @@ def createcomment(request):
         content=request.POST.get('content')
         Commentdata=commentdata(name=name,email=email,content=content)
         Commentdata.save()
-        return redirect('entries')
+        return redirect('seconds')
     return render(request,'comments.html')
 
 def viewcomment(request):
@@ -238,9 +238,9 @@ def delete_comment(request,Commentdata_id):
 
 
 
-def entrypage(request):
 
-    return render(request,'home.html')
+def secondpace(request):
+    return render(request,'secondpage.html')
 
 
 

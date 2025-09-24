@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <style>
+            #first_bar{ width:100%;
+                        height:40px;
+                        background-color:rgb(2, 62, 2);}
+            #logo_bar{float:left;
+                       line-height: 40px;
+                       color:aliceblue}
+            #nav-bar{float:right;
+
+                     }
+            ul{list-style-type: none;
+               margin-left: 40px;}
+            li{float: left;
+               line-height: 40px;
+               padding-left: 40px;
+               color:aliceblue}
+            select{background-color: rgb(2, 62, 2);
+                   color:aliceblue}
+            #a_bar{float:right;}
+            #search_bar{float:right;
+                        line-height: 40px;
+                        margin-left: 3px;}
+            input[type=submit] {background-color: green;
+                                border: solid green;
+                                border-radius: 4px;
+                                color: aliceblue;}
+            #text_bar{float:right;
+                      line-height: 40px;
+                      }
+            input[type=text]{border-radius: 5px;}
+            #content_bar{width:100%;
+                         background-color: green;
+                         height:300px;
+                         }
+            #line_bar {text-align: center;
+                       padding-top:70px;
+                       color:aliceblue;}
+            input[type="button"]{border-radius: 5px;
+                                 background-color: black;
+                                 color:aliceblue}
+            #contents_bar{width:100%;
+                          height:400px;
+                        background-color:antiquewhite;
+                        text-align: center;
+                        padding-top: 20px;
+                        font-size: 28px;}
+            #data_bar{font-size: 12px;
+                      color:gray;}
+            #detail_bar{font-size: 12px;
+                         color:gray;}
+            #next_bar{width:30%;
+                      height:250px;
+                      background-color: grey;
+                      margin-left: 15px;
+                      text-align: center;
+                      line-height: 250px;
+                      float:left;
+                      color:darkslategray;}
+            #other_bar{width:30%;
+                      height:250px;
+                      background-color: grey;
+                      float:right;
+                      margin-right: 15px;
+                      text-align: center;
+                      line-height:250px;
+                      color:darkslategray;}
+            #coming_bar{width:30%;
+                        height:250px;
+                        background-color: grey;
+                        float:right;
+                        margin-right: 50px;
+                        text-align: center;
+                        line-height: 250px;
+                        color:darkslategray}
+            #come_bar{float:left;
+                      width:30%;
+                      text-align: center;
+                      color:darkslateblue;
+
+                      }
+            #came_bar{font-size: 15px;
+                       color:grey;}
+            #go_bar{font-size: 15px;
+                        color:grey;}
+            #went_bar{font-size: 15px;
+                       color:grey;}
+            #going_bar{float: right;
+                    width:30%;
+                     color:darkslateblue;}
+            #cames_bar{font-size: 15px;
+                       color:grey;}
+            #goes_bar{font-size: 15px;
+                       color:grey;}
+            #wents_bar{font-size: 15px;
+                        color:grey;}
+            #reaches_bar{font-size: 15px;
+                         color:grey;}
+            #reached_bar{font-size: 15px;
+                          color:grey;}
+            #reaching_bar{font-size: 15px;
+                          color:grey;}
+         </style>
+
+    </head>
+    <body>
+        <div>
+        <div id="first_bar">
+            <div id="logo_bar" >
+               <a href="{% url 'logged' %}" class="btn btn-primary">Login</a>
+            </div>
+            <div id="nav_bar">
+            <ul>
+                <li> <a href="{% url 'see' %}" class="btn btn-info">VIEW BLOG</a> </li>
+                <li><a href="{% url 'commenter' %}" class="btn btn-warning">VIEW COMMENTS</a><br>  </li>
+                <li>  </li>
+                <li></li>
+            </ul>
+            </div>
+            <div id="a_bar">
+
+            <div id="search_bar">
+            <a href="{% url 'searches' %}" class="btn btn-danger">SEARCH TITLES RELATED TO BLOG</a>
+            </div>
+            <div id="text_bar">
+               <a href="{% url 'commenting' %}" class="btn btn-secondary">LEAVE A COMMENT</a>
+             </div>
+            </div>
+
+        </div>
+        <div id="content_bar">
+            <div id="line_bar">
+            <h1><b>KRAFT</b></h1>
+            <h3>WELCOME TO THE WORLD OF KRAFT, THE PLACE WHERE YOU BLOG</h3>
+            <a href="{% url 'createblog' %}" class="btn btn-danger">CREATE BLOG</a>
+            </div>
+        </div>
+
+        <div id="contents_bar">
+            <div>
+            If you want to be a member <span style="color:gray">of our community</span>
+            </div>
+            <div id="data_bar">
+                You should submit details about your profiles and along with it you should upload your photo.
+            </div>
+            <div id="detail_bar">
+                You can do all the above mentioned actions in the space provided below.
+            </div>
+
+            <div id="next_bar">
+               <a href="{% url 'profile'%}" class="btn btn-success">CREATE PROFILE</a>
+               </div>
+
+            <div id="other_bar">
+               <a href="{% url 'picture' %}" class="btn btn-success">UPLOAD PROFILE PHOTO</a>
+            </div>
+            <div id="coming_bar"><a href="{% url 'profileslist' %}" class="btn btn-success">VIEW PROFILES</a><a href="{% url 'galleries' %}" class="btn btn-success">&PHOTO</a></div>
+            <div id="come_bar">
+                Give details about yourself
+                <div id="came_bar">
+                    The details should include your fullname,
+                </div>
+                <div id="go_bar">email,contact phone number,natinality,</div>
+                <div id="went_bar">pincode,username and password</div>
+                </div>
+                <div id="going_bar">You can upload your photo here
+                   <div id="cames_bar">
+                    This blogging website needs your
+                </div>
+                <div id="goes_bar">profile photo and so you can give</div>
+                <div id="wents_bar">your photo using the above link.</div>
+                </div>
+                <div id="reach_bar" style="color:darkslateblue">Here,users and viewers<div id="reaches_bar">
+                    can view your profile accounts and photos
+                </div>
+                <div id="reaching_bar">using the two links given above.</div>
+                <div id="reached_bar">please not above area contains two links.</div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </body>
+</html>
+</body>
+</html>

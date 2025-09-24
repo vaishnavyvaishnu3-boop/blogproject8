@@ -3,7 +3,8 @@ from .import views
 
 
 urlpatterns=[
-   path('',views.login,name='logged'),
+   path('',views.secondpace,name='seconds'),
+   path('logins',views.login,name='logged'),
    path('register/',views.registration,name='registered'),
    path('forgot/',views.forgot_password,name='newlypassword'),
    path('profiled/',views.create_profile,name='profile'),
@@ -24,7 +25,8 @@ urlpatterns=[
    path('eachcomment/<int:Commentdata_id>/',views.view_each_comment,name='eachcomments'),
    path('updatecommented/<int:Commentdata_id>/',views.update_comment,name='updatedcomment'),
    path('deletecommented/<int:Commentdata_id>/',views.delete_comment,name='deletedcomment'),
-   path('entry/',views.entrypage,name='entries')
+
+
 
 
 
