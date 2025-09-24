@@ -19,6 +19,7 @@
 {{Postitem.caption}}<br>
 <a href="{% url 'updating' Postitem.id %}">UPDATE YOUR BLOG</a><br>
   <a href="{% url 'deleted' Postitem.id %}">DELETE YOUR BLOG</a><br>
+    <a href="{% url 'commenting'  %}">CREATE COMMENT</a>
 {% endfor %}
 </table>
 

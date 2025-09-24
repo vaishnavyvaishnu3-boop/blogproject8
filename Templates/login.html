@@ -21,10 +21,7 @@
             <td><label>Username:</label></td>
             <td><input type="text" name="username" placeholder="Enter username"></td>
         </tr>
-        <tr>
-            <td><label>Email:</label></td>
-            <td><input type="text" name="email" placeholder="Enter email"><td>
-        </tr>
+
         <tr>
             <td><label>Password:</label></td>
             <td><input type="password" name="password" placeholder="Enter password(only in digits)"></td>
@@ -34,6 +31,10 @@
         </tr>
         <tr>
          <td><a href="{% url 'newlypassword' %}" >Forgot password</a></td>
+
+        </tr>
+        <tr>
+            <td><a href="{% url 'registered' %}">REGISTER</a></td>
         </tr>
 
 

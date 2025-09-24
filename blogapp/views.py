@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login
 from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q
 from django.http import HttpResponse
@@ -15,21 +15,40 @@ from .forms import ProfileForm,PostForm
 
 def registration(request):
     if request.method=='POST':
-        name=request.POST.get('name')
-        age=request.POST.get('age')
-        Register=register(name=name,age=age)
-        Register.save()
-        return redirect('logged')
+        username=request.POST.get('username')
+        first_name=request.POST.get('first_name')
+        last_name=request.POST.get('last_name')
+        email=request.POST.get('email')
+        password=request.POST.get('password')
+        cpassword=request.POST.get('cpassword')
+        if password == cpassword:
+            if User.objects.filter(username=username).exists():
+                messages.info(request,'this username already exists')
+                return redirect('registered')
+            elif User.objects.filter(email=email).exists():
+                messages.info(request,'This email is already taken')
+                return redirect('registered')
+            else:
+                user=User.objects.create_user(username=username,first_name=first_name,last_name=last_name,email=email,password=password)
+                user.save()
+                return redirect('logged')
+        else:
+            messages.info(request,'This password is not matching')
+            return redirect('registered')
     return render(request,'registration.html')
 
 def login(request):
     if request.method=='POST':
         username=request.POST.get('username')
-        email=request.POST.get('email')
         password=request.POST.get('password')
-        Logindata=logindata(username=username,email=email,password=password)
-        Logindata.save()
-        return redirect('entries')
+
+        user=auth.authenticate(request, username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            return redirect('entries')
+        else:
+            messages.error(request,'Invalid username or password')
+            return redirect('logged')
 
 
 
@@ -136,6 +155,7 @@ def post_blog(request):
 
 def see_blog(request):
     Postitems=postitem.objects.all()
+
     paginator=Paginator(Postitems,1)
     page_number=request.GET.get('page')
     try:

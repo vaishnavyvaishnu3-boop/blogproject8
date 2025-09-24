@@ -3,8 +3,8 @@ from .import views
 
 
 urlpatterns=[
-   path('',views.registration,name='registered'),
-   path('logins/',views.login,name='logged'),
+   path('',views.login,name='logged'),
+   path('register/',views.registration,name='registered'),
    path('forgot/',views.forgot_password,name='newlypassword'),
    path('profiled/',views.create_profile,name='profile'),
    path('forgotten/',views.create_new_password,name='newerpassword'),

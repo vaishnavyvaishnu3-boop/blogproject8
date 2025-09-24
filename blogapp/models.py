@@ -59,6 +59,7 @@ class postitem(models.Model):
         return '{}'.format(self.title)
 
 class commentdata(models.Model):
+    Postitem=models.ForeignKey(postitem,on_delete=models.CASCADE,related_name='comments',null=True)
     name=models.CharField(max_length=200)
     email=models.EmailField(max_length=200)
     content=models.TextField(max_length=2000)
